@@ -1,7 +1,6 @@
 {
   "name": "03-api-rest-nodejs",
   "version": "1.0.0",
-  "type": "module",
   "description": "GymPass style app",
   "main": "index.js",
   "scripts": {
@@ -31,6 +30,7 @@
     "vitest": "2.0.5"
   },
   "dependencies": {
+    "@fastify/jwt": "8.0.1",
     "@prisma/client": "5.18.0",
     "bcryptjs": "2.4.3",
     "dayjs": "1.11.13",
