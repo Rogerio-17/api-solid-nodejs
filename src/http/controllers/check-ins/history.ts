@@ -1,4 +1,4 @@
-import { FastifyRequest, FastifyReply } from "fastify";
+import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 import { makeFetchUserCheckInsHistoryUseCase } from "@/use-cases/factories/make-fetch-user-check-ins-history-use-case";
 
@@ -12,8 +12,8 @@ export async function history(request: FastifyRequest, reply: FastifyReply) {
   const fetchUserCheckInsHistoryUseCase = makeFetchUserCheckInsHistoryUseCase();
 
   const { checkIns } = await fetchUserCheckInsHistoryUseCase.execute({
-    userId: request.user.sub,
     page,
+    userId: request.user.sub,
   });
 
   return reply.status(200).send({
